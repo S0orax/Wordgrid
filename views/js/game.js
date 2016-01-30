@@ -30,21 +30,20 @@ function drawBox(letter, posX, posY, size, radius) {
   ctx.fillText(letter, posX + size / 2 - text.width / 2, posY + size / 2 + text.width / 2.5);
 }
 
-function computeGridLength(gridArray) {
-  var cpt = 0;
-  for (var i = 0; i < gridArray.length; i++) {
-    cpt = cpt + gridArray[i].length;
-  }
-  return Math.sqrt(cpt);
-}
-
 function drawGrid() {
-  var grid = ["AAA", "AAA", "AAA"];
-  var gridLength = computeGridLength(grid);
+  var grid = ["ABC", "DEF", "GHI"];
+  var margin = 5;
+  
+  var sizeBox = canvas.width / grid.length - margin - margin / 4;
 
-  // TODO: compute the position of all box
+  for (var i = 0; i < grid.length; i++) {
+    for (var j = 0; j < grid.length; j++) {
+      var posX = margin + i * (sizeBox + margin);
+      var posY = margin + j * (sizeBox + margin);
 
-  drawBox("A", 50, 50, 64, 5);
+      drawBox(grid[j][i], posX, posY, sizeBox, 5);
+    }
+  }
 }
 
 function setupEventListener() {
