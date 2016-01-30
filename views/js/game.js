@@ -2,6 +2,7 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 var colorSquareFill = '#CCCCCC';
+var fontSize = 40;
 
 
 function roundRec(posX, posY, size, radius) {
@@ -22,7 +23,13 @@ function drawBox(letter, posX, posY, size, radius) {
   roundRec(posX, posY, size, radius);
   ctx.fillStyle = colorSquareFill;
   ctx.fill();
-  // TODO: Adding the letter
+
+  ctx.font = "bold " + fontSize + 'px sans-serif';
+  var text = ctx.measureText(letter);
+  ctx.fillStyle = '#000000';
+  //ctx.strokeStyle = "#000000";
+  ctx.fillText(letter, posX + size / 2 - text.width / 2, posY + size / 2 + text.width / 2.5);
+  //ctx.strokeText(letter, posX + size / 2 - text.width / 2, posY + size / 2 + text.width / 2.5);
 }
 
 function computeGridLength(gridArray) {
