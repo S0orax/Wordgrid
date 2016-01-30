@@ -1,7 +1,7 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
-var colorSquareFill = '#CCCCCC';
+var colorSquareFill = '#DEB887';
 var fontSize = 40;
 
 
@@ -27,9 +27,7 @@ function drawBox(letter, posX, posY, size, radius) {
   ctx.font = "bold " + fontSize + 'px sans-serif';
   var text = ctx.measureText(letter);
   ctx.fillStyle = '#000000';
-  //ctx.strokeStyle = "#000000";
   ctx.fillText(letter, posX + size / 2 - text.width / 2, posY + size / 2 + text.width / 2.5);
-  //ctx.strokeText(letter, posX + size / 2 - text.width / 2, posY + size / 2 + text.width / 2.5);
 }
 
 function computeGridLength(gridArray) {
