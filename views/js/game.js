@@ -20,20 +20,14 @@ function roundRec(posX, posY, size, radius) {
 }
 
 function drawBox(letter, posX, posY, size, radius) {
-  roundRec(posX, posY, size, radius);
-  ctx.fillStyle = colorSquareFill;
-  ctx.fill();
-
-  ctx.font = "bold " + fontSize + 'px sans-serif';
-  var text = ctx.measureText(letter);
-  ctx.fillStyle = '#000000';
-  ctx.fillText(letter, posX + size / 2 - text.width / 2, posY + size / 2 + text.width / 2.5);
+  var box = new RoundedBox(letter, posX, posY, size, radius);
+  box.draw(colorSquareFill);
 }
 
 function drawGrid() {
   var grid = ["ABC", "DEF", "GHI"];
   var margin = 5;
-  
+
   var sizeBox = canvas.width / grid.length - margin - margin / 4;
 
   for (var i = 0; i < grid.length; i++) {
