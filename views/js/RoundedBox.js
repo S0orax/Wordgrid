@@ -1,3 +1,5 @@
+var fontSize = 40;
+
 function RoundedBox(letter, posX, posY, size, radius) {
   this.posX = posX;
   this.posY = posY;

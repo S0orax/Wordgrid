@@ -2,22 +2,6 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 var colorSquareFill = '#DEB887';
-var fontSize = 40;
-
-
-function roundRec(posX, posY, size, radius) {
-  ctx.beginPath();
-  ctx.moveTo(posX + radius, posY);
-  ctx.lineTo(posX + size - radius, posY);
-  ctx.quadraticCurveTo(posX + size, posY, posX + size, posY + radius);
-  ctx.lineTo(posX + size, posY + size - radius);
-  ctx.quadraticCurveTo(posX + size, posY + size, posX + size - radius, posY + size);
-  ctx.lineTo(posX + radius, posY + size);
-  ctx.quadraticCurveTo(posX, posY + size, posX, posY + size - radius);
-  ctx.lineTo(posX, posY + radius);
-  ctx.quadraticCurveTo(posX, posY, posX + radius, posY);
-  ctx.closePath();
-}
 
 function drawBox(letter, posX, posY, size, radius) {
   var box = new RoundedBox(letter, posX, posY, size, radius);
