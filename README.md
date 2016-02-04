@@ -8,7 +8,7 @@ to find a word. When the grid is empty, you win the level and you can pass in ot
 
 ## How to play
 
-The game is not playable for the moment, it's in developement.
+The game is not playable for the moment, it's in development.
 
 ## TODO
 
