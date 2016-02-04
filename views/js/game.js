@@ -1,15 +1,23 @@
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
-var colorSquareFill = '#DEB887';
+var grid = new Grid(["ABC", "DEF", "GHI"]);
 
-function drawGrid() {
-  var grid = new Grid(["ABC", "DEF", "GHI"]);
+function render() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   grid.draw();
 }
 
-function setupEventListener() {
-  drawGrid();
+var lastTime;
+var main = function() {
+  var now = Date.now();
+  var dt = (now - lastTime) / 1000.0;
+
+  render();
+
+  lastTime = now;
+  requestAnimationFrame(main);
 }
 
-window.onload = setupEventListener;
+main();
