@@ -3,8 +3,9 @@
 ## What is it ?
 
 Wordgrid is an online game made with web technologies (Javascript / HTML / CSS).
-The rules are simple, you have a grid of character, the goal is to linked this letter
-to find a word. When the grid is empty, you win the level and you can pass in other level.
+The rules are simple, you have a grid of letters, the goal is to link those letters
+to find a word. When you found one, letters which are on top fall down.
+ When the grid is empty, you win the level and you can go to the next one.
 
 ## How to play
 
