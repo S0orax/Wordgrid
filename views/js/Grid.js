@@ -1,33 +1,37 @@
-var colorSquareFill = '#DEB887';
+var setupListeners = function () {
+    var grid = new Grid("ABCDEFGHI");
+	grid.draw();
+
+    updateBox();
+}
+window.addEventListener("load", setupListeners);
+
+function updateBox() {
+    var box = document.getElementsByClassName("box");
+    var n = box.length;
+    var width = window.getComputedStyle(box[0]).getPropertyValue("width");
+    for (var i = 0; i < n; i++) {
+        box[i].style.height = width;
+        box[i].style.fontSize = width;
+    }
+}
+window.addEventListener("resize", updateBox);
 
 function Grid(rows) {
   this.rows = rows;
 
-
-
-
-  this.createBox = function (letter, posX, posY, size, radius) {
-    var box = new RoundedBox(letter, posX, posY, size, radius);
-    box.draw(colorSquareFill);
+  this.createBox = function (letter) {
+    var grid = document.getElementById("grid");
+    var box = document.createElement("div");
+    box.className = "col-xs-4 coverBox";
+    box.innerHTML = "<h1 class='box'>"+letter+"</h1>";
+    grid.appendChild(box);
   }
-
-
 
   this.draw = function() {
-    var margin = 5;
-    var rowslength = rows.length;
-
-    var sizeBox = canvas.width / rowslength - margin - margin / 4;
-
-    for (var i = 0; i < rowslength; i++) {
-      for (var j = 0; j < rowslength; j++) {
-        var posX = margin + i * (sizeBox + margin);
-        var posY = margin + j * (sizeBox + margin);
-
-        this.createBox(rows[j][i], posX, posY, sizeBox, 5);
-      }
+    var n = rows.length;
+    for (var i = 0; i < n; i++) {
+        this.createBox(rows[i]);
     }
   }
-
-
 }

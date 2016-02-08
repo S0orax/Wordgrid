@@ -11,9 +11,24 @@ header {
   font-weight: bold;
 }
 
-canvas {
+#grid {
   background-color: #222222;
-  width: 100%;
-  height: auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
   border-radius: 10px;
+  padding: 5px;
+}
+
+#grid .coverBox {
+  padding: 5px;
+}
+
+#grid h1.box {
+  background-color: #DEB887;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0px;
+  color: black;
 }
